@@ -5,6 +5,7 @@
     "start": "node server.cjs",
     "test": "node --test tests/api.test.cjs",
     "test:accessibility": "node tests/accessibility.cjs",
+    "test:theme": "node tests/theme.cjs",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

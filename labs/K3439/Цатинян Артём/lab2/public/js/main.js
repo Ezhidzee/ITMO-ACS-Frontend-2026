@@ -1,4 +1,5 @@
 import "./auth.js";
+import "./theme.js";
 import { catalog } from "./catalog.js";
 import { restaurant } from "./restaurant.js";
 import { profile } from "./profile.js";

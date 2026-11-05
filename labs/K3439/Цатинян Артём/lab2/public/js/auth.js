@@ -6,6 +6,7 @@ document.querySelectorAll("[data-toggle-password]").forEach(
       const input = document.getElementById(button.dataset.togglePassword);
       input.type = input.type === "password" ? "text" : "password";
       button.textContent = input.type === "password" ? "Показать" : "Скрыть";
+      button.setAttribute("aria-pressed", String(input.type === "text"));
     }),
 );
 const authForm = document.querySelector("#login-form, #register-form");

@@ -17,14 +17,14 @@ function renderRestaurantCard(restaurant) {
   return `
     <article class="col-md-6 col-xl-4 restaurant">
       <div class="restaurant-card">
-        <img src="${imageUrl}" alt="Ресторан ${esc(restaurant.name)}">
+        <img src="${imageUrl}" alt="">
         <div class="p-3">
           <div class="d-flex justify-content-between">
             <h3>${esc(restaurant.name)}</h3>
             <span class="rating">★ ${esc(restaurant.rating)}</span>
           </div>
           <p>${esc(restaurant.cuisine)} · ${esc(restaurant.district)} · ${esc(restaurant.price)} ₽</p>
-          <a class="stretched-link" href="restaurant.html?id=${encodeURIComponent(restaurant.id)}">Открыть ресторан</a>
+          <a class="stretched-link" href="restaurant.html?id=${encodeURIComponent(restaurant.id)}" aria-label="Открыть ресторан ${esc(restaurant.name)}">Открыть ресторан</a>
         </div>
       </div>
     </article>`;
@@ -54,6 +54,12 @@ async function catalog() {
     )
     .join("");
   let cuisine = "";
+  filters.querySelectorAll("[data-filter]").forEach((button) => {
+    button.setAttribute(
+      "aria-pressed",
+      String(button.classList.contains("active")),
+    );
+  });
   async function render() {
     const q = new URLSearchParams();
     if (cuisine) q.set("cuisine", cuisine);
@@ -62,13 +68,19 @@ async function catalog() {
     list.innerHTML = data.length
       ? data.map(renderRestaurantCard).join("")
       : "<p>Рестораны не найдены. Попробуйте другие фильтры.</p>";
+    document.querySelector("#catalog-status").textContent = data.length
+      ? `Найдено ресторанов: ${data.length}`
+      : "Рестораны не найдены";
   }
   filters.onclick = (e) => {
     const button = e.target.closest("[data-filter]");
     if (!button) return;
     cuisine = button.dataset.filter;
-    filters.querySelector(".active")?.classList.remove("active");
+    const previous = filters.querySelector(".active");
+    previous?.classList.remove("active");
+    previous?.setAttribute("aria-pressed", "false");
     button.classList.add("active");
+    button.setAttribute("aria-pressed", "true");
     render().catch((err) => showError(list.parentElement, err.message));
   };
   district.onchange = () =>

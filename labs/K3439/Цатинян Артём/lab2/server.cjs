@@ -24,6 +24,9 @@ app.use(jsonServer.bodyParser);
 app.get("/bootstrap.css", (req, res) =>
   res.sendFile(require.resolve("bootstrap/dist/css/bootstrap.min.css")),
 );
+app.get("/bootstrap.js", (req, res) =>
+  res.sendFile(require.resolve("bootstrap/dist/js/bootstrap.bundle.min.js")),
+);
 const fail = (res, code, message) => res.status(code).json({ message });
 app.post("/api/:action(register|login)", (req, res) => {
   const { name, email, password } = req.body;

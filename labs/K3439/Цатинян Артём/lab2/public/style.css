@@ -3,7 +3,7 @@
   --ink: #24201e;
   --cream: #fffaf4;
   --sand: #f2e8dc;
-  --accent: #c85c3e;
+  --accent: #a83f25;
   --muted: #756d67;
 }
 * {
@@ -47,6 +47,10 @@ body {
 }
 .hero .eyebrow {
   color: #ffc1a8;
+  background: #241d19;
+  display: inline-block;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.2rem;
 }
 .hero h1,
 h2 {
@@ -75,7 +79,28 @@ h2 {
 .form-control {
   border: 0;
   padding: 0.25rem 0;
-  box-shadow: none !important;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 1100;
+  top: 0.5rem;
+  left: 0.5rem;
+  transform: translateY(-200%);
+  padding: 0.75rem 1rem;
+  background: #fff;
+  color: #24201e;
+  border: 2px solid #24201e;
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+:focus-visible {
+  outline: 3px solid #216977;
+  outline-offset: 3px;
+}
+#main-content:focus {
+  outline: none;
 }
 .btn-accent {
   background: var(--accent);

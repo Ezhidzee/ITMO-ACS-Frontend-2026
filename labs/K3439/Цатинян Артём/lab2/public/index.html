@@ -6,10 +6,6 @@
     <title>TABLELY — бронирование ресторанов</title>
     <script src="js/theme-init.js"></script>
     <link href="/bootstrap.css" rel="stylesheet" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
@@ -31,7 +27,9 @@
           data-bs-toggle="collapse"
           data-bs-target="#menu"
         >
-          <i class="bi bi-list" aria-hidden="true"></i>
+          <svg class="icon" aria-hidden="true" focusable="false">
+            <use href="icons.svg#menu"></use>
+          </svg>
         </button>
         <div class="collapse navbar-collapse" id="menu">
           <ul class="navbar-nav ms-auto align-items-lg-center">
@@ -99,7 +97,9 @@
           <h2>Рестораны, которые стоит открыть</h2>
         </div>
         <a class="link-dark" href="#catalog"
-          >Все места <i class="bi bi-arrow-up-right"></i
+          >Все места
+          <svg class="icon" aria-hidden="true" focusable="false">
+            <use href="icons.svg#arrow-up-right"></use></svg
         ></a>
       </div>
       <div
@@ -136,7 +136,12 @@
             <div class="p-3">
               <div class="d-flex justify-content-between">
                 <h3>Cielo</h3>
-                <span class="rating"><i class="bi bi-star-fill"></i> 4.9</span>
+                <span class="rating"
+                  ><svg class="icon" aria-hidden="true" focusable="false">
+                    <use href="icons.svg#star"></use>
+                  </svg>
+                  <span class="visually-hidden">Рейтинг: </span>4.9</span
+                >
               </div>
               <p>Итальянская · Центр · ₽₽₽</p>
               <a class="stretched-link" href="restaurant.html"
@@ -158,7 +163,12 @@
             <div class="p-3">
               <div class="d-flex justify-content-between">
                 <h3>Mizu</h3>
-                <span class="rating"><i class="bi bi-star-fill"></i> 4.8</span>
+                <span class="rating"
+                  ><svg class="icon" aria-hidden="true" focusable="false">
+                    <use href="icons.svg#star"></use>
+                  </svg>
+                  <span class="visually-hidden">Рейтинг: </span>4.8</span
+                >
               </div>
               <p>Японская · Петроградская · ₽₽</p>
               <a class="stretched-link" href="restaurant.html"
@@ -180,7 +190,12 @@
             <div class="p-3">
               <div class="d-flex justify-content-between">
                 <h3>Forma</h3>
-                <span class="rating"><i class="bi bi-star-fill"></i> 4.7</span>
+                <span class="rating"
+                  ><svg class="icon" aria-hidden="true" focusable="false">
+                    <use href="icons.svg#star"></use>
+                  </svg>
+                  <span class="visually-hidden">Рейтинг: </span>4.7</span
+                >
               </div>
               <p>Авторская · Центр · ₽₽₽₽</p>
               <a class="stretched-link" href="restaurant.html"

@@ -23,7 +23,7 @@ function renderRestaurantDetails(restaurant) {
     <h2 class="mt-5">Популярное меню</h2>
     <div class="border-bottom py-3">${esc(restaurant.dish)}</div>
     <h2 class="mt-5">Рейтинг</h2>
-    <div class="bg-white rounded-4 p-3">★ ${esc(restaurant.rating)}</div>
+    <div class="bg-white rounded-4 p-3"><svg class="icon rating" aria-hidden="true" focusable="false"><use href="icons.svg#star"></use></svg> <span class="visually-hidden">Рейтинг: </span>${esc(restaurant.rating)}</div>
   `;
 }
 async function restaurant() {

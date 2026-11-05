@@ -21,7 +21,7 @@ function renderRestaurantCard(restaurant) {
         <div class="p-3">
           <div class="d-flex justify-content-between">
             <h3>${esc(restaurant.name)}</h3>
-            <span class="rating">★ ${esc(restaurant.rating)}</span>
+            <span class="rating"><svg class="icon" aria-hidden="true" focusable="false"><use href="icons.svg#star"></use></svg> <span class="visually-hidden">Рейтинг: </span>${esc(restaurant.rating)}</span>
           </div>
           <p>${esc(restaurant.cuisine)} · ${esc(restaurant.district)} · ${esc(restaurant.price)} ₽</p>
           <a class="stretched-link" href="restaurant.html?id=${encodeURIComponent(restaurant.id)}" aria-label="Открыть ресторан ${esc(restaurant.name)}">Открыть ресторан</a>

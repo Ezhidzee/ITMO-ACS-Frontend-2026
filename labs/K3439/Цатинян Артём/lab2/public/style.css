@@ -35,7 +35,10 @@ body {
   color: var(--ink);
   background: var(--cream);
 }
-main, section, aside, form {
+main,
+section,
+aside,
+form {
   min-width: 0;
 }
 .navbar {
@@ -209,6 +212,16 @@ footer {
 .theme-toggle svg {
   width: 1.25rem;
   height: 1.25rem;
+}
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+}
+.navbar-toggler .icon {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 [data-bs-theme="dark"] .navbar-brand,
 [data-bs-theme="dark"] .link-dark,
